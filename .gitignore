@@ -99,3 +99,7 @@ InitTestScene*.unity*
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 
 SSS-Client/Library/
+
+SSS-Client/Temp/
+
+SSS-Client/ProjectSettings/SceneTemplateSettings.json
