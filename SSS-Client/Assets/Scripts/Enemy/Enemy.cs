@@ -1,0 +1,40 @@
+using UnityEngine;
+
+public class Enemy : MonoBehaviour
+{
+    [SerializeField] 
+    protected float health;
+    [SerializeField] 
+    protected Rigidbody2D rigidbody2D;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+    
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        HurtSequence();
+        if (health <= 0)
+        {
+            DeathSequence();
+        }
+    }
+
+    public virtual void HurtSequence()
+    {
+        
+    }
+
+    public virtual void DeathSequence()
+    {
+        
+    }
+}
