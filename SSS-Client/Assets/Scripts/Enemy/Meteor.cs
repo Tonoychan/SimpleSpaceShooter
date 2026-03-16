@@ -39,7 +39,9 @@ public class Meteor : Enemy
     {
         if (collider.CompareTag("Player"))
         {
-            Destroy(collider.gameObject);
+            PlayerStats playerStats = collider.GetComponent<PlayerStats>();
+            playerStats.PlayerTakeDamage(damage);
+            Destroy(gameObject);
         }
     }
 

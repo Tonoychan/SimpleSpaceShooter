@@ -171,6 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Meteor
   health: 2
   rigidbody2D: {fileID: 5291250165528990152}
+  damage: 1
   minSpeed: 8
   maxSpeed: 10
   rotateSpeed: 40
