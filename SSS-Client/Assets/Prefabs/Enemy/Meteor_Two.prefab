@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cdeb946b11dff248a674113eced072b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Meteor
-  health: 0
+  health: 2
   rigidbody2D: {fileID: 3969195054838935048}
   minSpeed: 6
   maxSpeed: 10
