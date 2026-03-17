@@ -10,6 +10,8 @@ public class Meteor : Enemy
     private float maxSpeed;
     [SerializeField]
     private float rotateSpeed;
+    [SerializeField] 
+    private GameObject explosionVFX;
 
     private float speed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,6 +29,7 @@ public class Meteor : Enemy
 
     public override void DeathSequence()
     {
+        Instantiate(explosionVFX,transform.position, transform.rotation);
         Destroy(gameObject);
     }
 
@@ -41,6 +44,7 @@ public class Meteor : Enemy
         {
             PlayerStats playerStats = collider.GetComponent<PlayerStats>();
             playerStats.PlayerTakeDamage(damage);
+            Instantiate(explosionVFX,transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

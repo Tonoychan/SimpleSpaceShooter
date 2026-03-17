@@ -175,3 +175,4 @@ MonoBehaviour:
   minSpeed: 6
   maxSpeed: 10
   rotateSpeed: 40
+  explosionVFX: {fileID: 7916761849648018497, guid: 3d408464eccb94c4bbfaeac7d3851489, type: 3}
