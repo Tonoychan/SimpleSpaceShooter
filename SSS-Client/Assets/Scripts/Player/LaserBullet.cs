@@ -19,6 +19,7 @@ public class LaserBullet : MonoBehaviour
     {
         Enemy enemy = collider.GetComponent<Enemy>();
         enemy.TakeDamage(damage);
+        Destroy(gameObject);
     }
 
     private void OnBecameInvisible()
