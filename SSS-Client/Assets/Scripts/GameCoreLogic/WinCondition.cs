@@ -16,6 +16,9 @@ public class WinCondition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(EndGameManager.endGameManager.isGameOver)
+            return;
+        
         timer += Time.deltaTime;
         if (timer >= possibleWinTime)
         {
