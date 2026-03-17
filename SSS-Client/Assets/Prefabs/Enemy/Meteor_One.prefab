@@ -172,6 +172,8 @@ MonoBehaviour:
   health: 2
   rigidbody2D: {fileID: 8776325935799222568}
   damage: 1
+  animator: {fileID: 0}
+  scoreValue: 10
   minSpeed: 2
   maxSpeed: 4
   rotateSpeed: 40

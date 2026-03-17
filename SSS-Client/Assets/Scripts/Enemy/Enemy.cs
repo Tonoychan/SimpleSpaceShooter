@@ -10,6 +10,9 @@ public class Enemy : MonoBehaviour
     protected float damage;
     [SerializeField]
     protected Animator animator;
+    
+    [SerializeField]
+    public int scoreValue;
         
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,6 +43,6 @@ public class Enemy : MonoBehaviour
 
     public virtual void DeathSequence()
     {
-        
+        EndGameManager.endGameManager.UpdateScoreText(scoreValue);
     }
 }

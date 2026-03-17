@@ -373,6 +373,7 @@ MonoBehaviour:
   rigidbody2D: {fileID: 1876032374567782886}
   damage: 1
   animator: {fileID: 1707839658754120996}
+  scoreValue: 20
   moveSpeed: 5
   shootInterval: 1
   LeftFirePoint: {fileID: 6013538925781050045}
