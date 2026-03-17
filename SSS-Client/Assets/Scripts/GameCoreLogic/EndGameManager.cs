@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class EndGameManager : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class EndGameManager : MonoBehaviour
     public bool isGameOver = false;
 
     PanelController panelController;
+    private TextMeshProUGUI scoreText;
+    private int score;
     private void Awake()
     {
         if (endGameManager == null)
@@ -47,16 +51,41 @@ public class EndGameManager : MonoBehaviour
 
     public void WinGame()
     {
+        ScoreSet();
         panelController.ActivateWinScreen();
     }
 
     public void LoseGame()
     {
+        ScoreSet();
         panelController.ActivateLoseScreen();
     }
 
     public void RegisterPanelController(PanelController _panelController)
     {
         panelController = _panelController;
+    }
+
+    public void RegisterScoreText(TextMeshProUGUI _scoreText)
+    {
+        scoreText = _scoreText;
+    }
+
+    public void UpdateScoreText(int scoreToAdd)
+    {
+        score += scoreToAdd;
+        scoreText.text = $"Score: "+score;
+    }
+    
+    private void ScoreSet()
+    {
+        PlayerPrefs.SetInt("Score"+SceneManager.GetActiveScene().name, score);
+        int highScore = PlayerPrefs.GetInt("HighScore" + SceneManager.GetActiveScene().name,0);
+        if (score > highScore)
+        {
+            PlayerPrefs.SetInt("HighScore" + SceneManager.GetActiveScene().name, score);
+        }
+
+        score = 0;
     }
 }
