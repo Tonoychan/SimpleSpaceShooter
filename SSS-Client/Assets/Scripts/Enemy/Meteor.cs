@@ -13,6 +13,9 @@ public class Meteor : Enemy
     [SerializeField] 
     private GameObject explosionVFX;
 
+    [SerializeField] 
+    private PowerUps powerUpSpawner;
+
     private float speed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,6 +34,10 @@ public class Meteor : Enemy
     {
         base.DeathSequence();
         Instantiate(explosionVFX,transform.position, transform.rotation);
+        if (powerUpSpawner != null)
+        {
+            powerUpSpawner.SpawnPowerUp(transform.position);
+        }
         Destroy(gameObject);
     }
 

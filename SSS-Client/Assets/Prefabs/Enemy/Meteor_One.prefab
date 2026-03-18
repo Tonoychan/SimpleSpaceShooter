@@ -178,3 +178,4 @@ MonoBehaviour:
   maxSpeed: 4
   rotateSpeed: 40
   explosionVFX: {fileID: 7916761849648018497, guid: 3d408464eccb94c4bbfaeac7d3851489, type: 3}
+  powerUpSpawner: {fileID: 11400000, guid: b89456257c38a3649b1f604b9c10ec59, type: 2}

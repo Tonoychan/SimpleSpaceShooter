@@ -14,18 +14,25 @@ public class PlayerStats : MonoBehaviour
     private Image healthBar;
     [SerializeField] 
     private GameObject explosionVFX;
+    [SerializeField]
+    private Sheild shield;
     
     private bool canPlayAnim = true;
+    private PlayerShooting _playerShooting;
     
      void Start()
     {
         health = maxHealth;
         healthBar.fillAmount = health / maxHealth;
         EndGameManager.endGameManager.isGameOver = false;
+        _playerShooting = GetComponent<PlayerShooting>();
     }
      
     public void PlayerTakeDamage(float damage)
     {
+        if(shield.protection)
+            return;
+        
         health -= damage;
         healthBar.fillAmount = health / maxHealth;
         if (canPlayAnim)
@@ -33,7 +40,7 @@ public class PlayerStats : MonoBehaviour
             playerAnimator.SetTrigger("IsDamage");
             StartCoroutine(AntiSpamAnimation());
         }
-        
+        _playerShooting.DecreaseUpgradelevel();
         if (health <= 0)
         {
             EndGameManager.endGameManager.isGameOver = true;
@@ -42,7 +49,17 @@ public class PlayerStats : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
+    public void PlayerAddHealth(float healAmount)
+    {
+        health += healAmount;
+        if(health > maxHealth)
+        {
+            health = maxHealth;
+        }
+        healthBar.fillAmount = health / maxHealth;
+    }
+
     private IEnumerator AntiSpamAnimation()
     {
         canPlayAnim = false;
