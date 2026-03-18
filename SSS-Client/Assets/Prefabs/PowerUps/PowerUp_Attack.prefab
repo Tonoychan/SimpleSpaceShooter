@@ -179,3 +179,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1536dd83107b54942bdb165699fd9cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpAttack
+  audioClip: {fileID: 8300000, guid: 978d3f0b82d784542a879ad0a570b487, type: 3}
