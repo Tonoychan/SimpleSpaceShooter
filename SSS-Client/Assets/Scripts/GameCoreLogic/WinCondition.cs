@@ -7,6 +7,9 @@ public class WinCondition : MonoBehaviour
     [SerializeField] private float possibleWinTime;
 
     [SerializeField] private GameObject[] spawners;
+    [SerializeField] private bool hasBoss = false;
+    public bool canSpawnBoss = false;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,11 +25,19 @@ public class WinCondition : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= possibleWinTime)
         {
+            if (hasBoss == false)
+            {
+                EndGameManager.endGameManager.StartResolveSequence();
+            }
+            else
+            {
+                canSpawnBoss = true;
+            }
+            
             foreach (var spawner in spawners)
             {
                 spawner.SetActive(false);
             }
-            EndGameManager.endGameManager.StartResolveSequence();
             gameObject.SetActive(false);
         }
     }

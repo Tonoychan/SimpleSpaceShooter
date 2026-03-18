@@ -10,6 +10,9 @@ public class Enemy : MonoBehaviour
     protected float damage;
     [SerializeField]
     protected Animator animator;
+
+    [SerializeField] 
+    protected GameObject explosionVFX;
     
     [SerializeField]
     public int scoreValue;

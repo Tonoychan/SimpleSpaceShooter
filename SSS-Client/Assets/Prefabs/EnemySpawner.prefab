@@ -47,3 +47,5 @@ MonoBehaviour:
   enemy:
   - {fileID: 8782019560943458550, guid: 181ef682a4e2214428a8430e0b7439d6, type: 3}
   spawnTime: 2
+  bossPrefab: {fileID: 2383731304536564887, guid: f67e44fe4e97cdd43861c74d9dbc268a, type: 3}
+  winCondition: {fileID: 0}
