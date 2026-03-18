@@ -700,7 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b37d097dd5266304fb57098d07e7b2db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WinCondition
-  possibleWinTime: 5
+  possibleWinTime: 30
   spawners:
   - {fileID: 541999702}
   - {fileID: 1085816305}

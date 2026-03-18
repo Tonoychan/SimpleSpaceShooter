@@ -27,6 +27,8 @@ public class PlayerShooting : MonoBehaviour
 
     private float resetInterval;
     
+    [SerializeField] private AudioSource audioSource;
+    
     void Start()
     {
         resetInterval = shootInterval;
@@ -63,6 +65,7 @@ public class PlayerShooting : MonoBehaviour
 
     void Shoot()
     {
+        audioSource.Play();
         switch (shootUpgradelevel)
         {
             case 0:

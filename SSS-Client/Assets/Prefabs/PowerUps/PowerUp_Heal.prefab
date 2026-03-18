@@ -180,3 +180,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpHeal
   healAmount: 3
+  audioClip: {fileID: 8300000, guid: 978d3f0b82d784542a879ad0a570b487, type: 3}
