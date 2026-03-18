@@ -700,10 +700,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b37d097dd5266304fb57098d07e7b2db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WinCondition
-  possibleWinTime: 30
+  possibleWinTime: 5
   spawners:
   - {fileID: 541999702}
   - {fileID: 1085816305}
+  hasBoss: 1
+  canSpawnBoss: 0
 --- !u!4 &839541835
 Transform:
   m_ObjectHideFlags: 0
@@ -1665,6 +1667,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 599789884891470269, guid: abc57042ce5682541bdaa3321dc3c467, type: 3}
+      propertyPath: winCondition
+      value: 
+      objectReference: {fileID: 839541834}
     - target: {fileID: 7296912108013675404, guid: abc57042ce5682541bdaa3321dc3c467, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
@@ -1728,7 +1734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4328117852181321882, guid: 34478f27a29c0ee42a188206445edfc5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5101598475738647123, guid: 34478f27a29c0ee42a188206445edfc5, type: 3}
       propertyPath: m_Pivot.x

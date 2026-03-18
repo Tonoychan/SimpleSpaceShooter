@@ -10,8 +10,6 @@ public class Meteor : Enemy
     private float maxSpeed;
     [SerializeField]
     private float rotateSpeed;
-    [SerializeField] 
-    private GameObject explosionVFX;
 
     [SerializeField] 
     private PowerUps powerUpSpawner;

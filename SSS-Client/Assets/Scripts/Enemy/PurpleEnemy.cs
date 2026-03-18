@@ -14,7 +14,6 @@ public class PurpleEnemy : Enemy
     [SerializeField] private Transform RightFirePoint;
     
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private GameObject explosionVFX;
 
     private void Start()
     {

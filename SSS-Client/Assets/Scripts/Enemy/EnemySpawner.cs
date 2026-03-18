@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -12,6 +14,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject[] enemy;
     private float enemySpawmTimer;
     [SerializeField] private float spawnTime;
+
+    [SerializeField] private GameObject bossPrefab;
+    [SerializeField] private WinCondition winCondition;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,5 +51,17 @@ public class EnemySpawner : MonoBehaviour
         maxLeft = mainCamera.ViewportToWorldPoint(new Vector2(0.15f, 0f)).x;
         maxRight = mainCamera.ViewportToWorldPoint(new Vector2(0.85f, 0f)).x;
         yPosition = mainCamera.ViewportToWorldPoint(new Vector2(0f,1.1f)).y;
+    }
+
+    private void OnDisable()
+    {
+        if(!winCondition.canSpawnBoss)
+            return;
+        
+        if (bossPrefab != null)
+        {
+            Vector2 spawnPos = mainCamera.ViewportToWorldPoint(new Vector2(0.5f, 1.2f));
+            Instantiate(bossPrefab,spawnPos,Quaternion.identity);
+        }
     }
 }
